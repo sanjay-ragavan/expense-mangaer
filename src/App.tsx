@@ -18,12 +18,48 @@ import CategoryChart from './components/CategoryChart';
 
 const theme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
+    background: {
+      default: '#000000',
+      paper: '#111111'
+    },
     primary: {
-      main: '#1976d2'
+      main: '#8f5aff' // violet
     },
     secondary: {
-      main: '#dc004e'
+      main: '#00ff99' // green
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#b39ddb'
+    }
+  },
+  shape: {
+    borderRadius: 16
+  },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16,
+          border: '1px solid #8f5aff',
+          backgroundImage: 'none',
+        }
+      }
+    },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12
+        }
+      }
     }
   }
 });

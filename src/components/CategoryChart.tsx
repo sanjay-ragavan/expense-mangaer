@@ -58,15 +58,16 @@ const CategoryChart: React.FC = () => {
       {
         data: summary.map((item) => item.total),
         backgroundColor: [
-          theme.palette.primary.main,
-          theme.palette.secondary.main,
-          theme.palette.error.main,
-          theme.palette.warning.main,
-          theme.palette.info.main,
-          theme.palette.success.main,
-          theme.palette.grey[500]
+          '#8f5aff', // violet
+          '#00ff99', // green
+          '#b39ddb',
+          '#00bfae',
+          '#5e35b1',
+          '#43e97b',
+          '#222222'
         ],
-        borderWidth: 1
+        borderColor: '#8f5aff',
+        borderWidth: 2
       }
     ]
   };
@@ -75,13 +76,18 @@ const CategoryChart: React.FC = () => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'right' as const
+        position: 'right' as const,
+        labels: {
+          color: '#b39ddb'
+        }
       },
       title: {
         display: true,
-        text: 'Expenses by Category'
+        text: 'Expenses by Category',
+        color: '#8f5aff'
       }
-    }
+    },
+    backgroundColor: '#000',
   };
 
   const barData = {
@@ -90,7 +96,9 @@ const CategoryChart: React.FC = () => {
       {
         label: 'Amount',
         data: summary.map((item) => item.total),
-        backgroundColor: theme.palette.primary.main
+        backgroundColor: '#00ff99', // green
+        borderColor: '#8f5aff', // violet
+        borderWidth: 2
       }
     ]
   };
@@ -99,20 +107,36 @@ const CategoryChart: React.FC = () => {
     responsive: true,
     plugins: {
       legend: {
-        display: false
+        display: false,
+        labels: {
+          color: '#b39ddb'
+        }
       },
       title: {
         display: true,
-        text: 'Expenses by Category'
+        text: 'Expenses by Category',
+        color: '#8f5aff'
       }
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
+          color: '#00ff99',
           callback: function(tickValue: string | number) {
             return `$${tickValue}`;
           }
+        },
+        grid: {
+          color: '#8f5aff'
+        }
+      },
+      x: {
+        ticks: {
+          color: '#00ff99'
+        },
+        grid: {
+          color: '#8f5aff'
         }
       }
     }
