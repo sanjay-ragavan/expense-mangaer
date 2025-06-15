@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/expense-mangaer/static/js/main.f2e1aae6.js",
+    "index.html": "/expense-mangaer/index.html",
+    "main.f2e1aae6.js.map": "/expense-mangaer/static/js/main.f2e1aae6.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f2e1aae6.js"
+  ]
+}
